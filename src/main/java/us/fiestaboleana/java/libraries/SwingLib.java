@@ -64,7 +64,7 @@ public class SwingLib {
     public static Component getAnjoJComponentFromJPanel(JPanel panel, int index){
         Component component;
         try {
-            component = panel.getComponent(index*2);
+            component = panel.getComponent(index+index+1);
             return component;
         } catch (IndexOutOfBoundsException e){
             System.out.println("El índice no existe \n" +
@@ -72,4 +72,65 @@ public class SwingLib {
             return null;
         }
     }
+
+    /**
+     * Hace el cast de getAnjoJComponentFromJPanel a JTextField
+     * y lo devuelve.
+     * @param panel El panel de AnjoPane
+     * @param index El índice de la fila
+     * @return El componente en caso de que si exista.
+     * Null si no se encuentra.
+     */
+    public static JTextField getAnjoJTextFieldFromJPanel(JPanel panel, int index){
+        Component component = getAnjoJComponentFromJPanel(panel, index);
+        if (component instanceof JTextField)
+            return (JTextField) component;
+        return null;
+    }
+
+    /**
+     * Hace el cast de getAnjoJComponentFromJPanel a JComboBox
+     * y lo devuelve.
+     * @param panel El panel de AnjoPane
+     * @param index El índice de la fila
+     * @return El componente en caso de que si exista.
+     * Null si no se encuentra.
+     */
+    public static JComboBox getAnjoJComboBoxFromJPanel(JPanel panel, int index){
+        Component component = getAnjoJComponentFromJPanel(panel, index);
+        if (component instanceof JComboBox)
+            return (JComboBox) component;
+        return null;
+    }
+
+    /**
+     * Consigue el texto de un JTextField de un AnjoPane.
+     * @param panel El panel de AnjoPane
+     * @param index El índice de la fila
+     * @return El texto en caso de que si exista.
+     * Null de lo contrario.
+     */
+    public static String getTextFromAnjoJTextField(JPanel panel, int index){
+        JTextField textField = getAnjoJTextFieldFromJPanel(panel, index);
+        if (textField != null)
+            return textField.getText();
+        return null;
+    }
+
+    /**
+     * Consigue el objeto seleccionado de un JComboBox de un AnjoPane.
+     * Se debe castear a lo que se necesite, por ejemplo String.
+     * @param panel El panel de AnjoPane
+     * @param index El índice de la fila
+     * @return El objeto seleccionado en caso de que exista.
+     * Null de lo contrario.
+     */
+    public static Object getSelectedItemFromAnjoJComboBox(JPanel panel, int index){
+        JComboBox comboBox = getAnjoJComboBoxFromJPanel(panel, index);
+        if (comboBox != null)
+            return comboBox.getSelectedItem();
+        return null;
+    }
+
+
 }
