@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"us.fiestaboleana.java.libraries","l":"PanelLib"},{"p":"us.fiestaboleana.java.libraries","l":"ScannerLib"},{"p":"us.fiestaboleana.java","l":"UlatinaJava"}];updateSearchResults();

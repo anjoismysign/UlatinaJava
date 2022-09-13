@@ -1,0 +1,47 @@
+@options
+@packages
+-classpath
+'/Users/lbenav8095/.m2/repository/commons-io/commons-io/2.5/commons-io-2.5.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'16'
+-sourcepath
+'/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'UlatinaJava 1.0 API'
+-use
+-version
+-windowtitle
+'UlatinaJava 1.0 API'
+us.fiestaboleana.java
+us.fiestaboleana.java.libraries
+/Users/lbenav8095/.m2/repository/commons-io/commons-io/2.5/commons-io-2.5.jar = 1655666922460
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/src/main/java = 1663026431902
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/tag-search-index.js = 1663028717969
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/overview-tree.html = 1663028717957
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/module-search-index.js = 1663028717968
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/index.html = 1663028717959
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/package-search-index.js = 1663028717969
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/jquery-ui.overrides.css = 1663028717991
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/index-all.html = 1663028717977
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/allpackages-index.html = 1663028717968
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/member-search-index.js = 1663028717969
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/script.js = 1663028717983
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/stylesheet.css = 1663028717982
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/overview-summary.html = 1663028717978
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/help-doc.html = 1663028717980
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/element-list = 1663028717933
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/allclasses-index.html = 1663028717967
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/type-search-index.js = 1663028717969
+/Users/lbenav8095/Documents/Dev/Java/programacionUno/UlatinaJava/target/site/apidocs/search.js = 1663028717985
