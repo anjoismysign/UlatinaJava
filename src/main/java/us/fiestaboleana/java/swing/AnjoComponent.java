@@ -1,4 +1,4 @@
-package us.fiestaboleana.java.objects;
+package us.fiestaboleana.java.swing;
 
 import javax.swing.*;
 
