@@ -48,8 +48,7 @@ public class AnjoPane {
             pane.setResult(new AnjoConfirmDialog(master, title, optionType, image).getResult());
             return pane;
         }
-        pane.setResult(JOptionPane.showConfirmDialog(null, panel,
-                title, optionType, -1));
+        pane.setResult(new AnjoConfirmDialog(panel, title, optionType, null).getResult());
         return pane;
     }
 
