@@ -10,7 +10,6 @@ import java.util.Collection;
 public class AnjoPane {
     private JPanel panel;
     private int result;
-    private Image image;
 
     public AnjoPane(JPanel panel) {
         this.panel = panel;
@@ -63,14 +62,6 @@ public class AnjoPane {
 
     public JPanel getPanel() {
         return panel;
-    }
-
-    public void setImage(Image image) {
-        this.image = image;
-    }
-
-    public Image getImage() {
-        return image;
     }
 
     public void setResult(int result) {
