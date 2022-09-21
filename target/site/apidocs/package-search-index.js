@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"us.fiestaboleana.java"},{"l":"us.fiestaboleana.java.libraries"},{"l":"us.fiestaboleana.java.objects"},{"l":"us.fiestaboleana.java.swing"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"us.fiestaboleana.java"},{"l":"us.fiestaboleana.java.libraries"},{"l":"us.fiestaboleana.java.objects"},{"l":"us.fiestaboleana.java.storage"},{"l":"us.fiestaboleana.java.swing"}];updateSearchResults();

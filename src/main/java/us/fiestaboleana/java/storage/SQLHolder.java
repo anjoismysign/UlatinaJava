@@ -9,16 +9,16 @@ public class SQLHolder {
     }
 
     /**
-     * Returns the SQLDatabase associated with this SQLLoader
+     * Regresa la base de datos SQL asociada con este SQLLoader
      *
-     * @return The SQLDatabase
+     * @return La SQLDatabase
      */
     public SQLDatabase getDatabase() {
         return this.database;
     }
 
     /**
-     * Disconnects from the SQLDatabase
+     * Desconecta de SQLDatabase
      */
     public void disconnect() {
         this.database.disconnect();
