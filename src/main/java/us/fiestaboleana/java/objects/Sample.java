@@ -24,7 +24,9 @@ public class Sample {
         AnjoPane pane = AnjoPane.build(components, "WHITELIST", 0,
                 new ImageIcon("src/main/resources/minecraft.png").getImage().getScaledInstance(128, 128, Image.SCALE_SMOOTH));
         String minecraftUsername = pane.getTextFieldText(0);
+        System.out.println(minecraftUsername);
         String discordUsername = pane.getTextFieldText(1);
+        System.out.printf(discordUsername);
         return new Sample(minecraftUsername, discordUsername);
     }
 
