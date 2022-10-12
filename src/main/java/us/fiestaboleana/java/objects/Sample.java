@@ -1,5 +1,6 @@
 package us.fiestaboleana.java.objects;
 
+import us.fiestaboleana.java.libraries.ResourceLib;
 import us.fiestaboleana.java.swing.AnjoComponent;
 import us.fiestaboleana.java.swing.AnjoPane;
 
@@ -18,11 +19,12 @@ public class Sample {
     }
 
     public static Sample build() {
+        ResourceLib resourceLib = new ResourceLib();
         List<AnjoComponent> components = new ArrayList<>();
         components.add(new AnjoComponent("Nombre de usuario (Minecraft)", new JTextField(20)));
         components.add(new AnjoComponent("Nombre de usuario (Discord)", new JTextField(20)));
-        AnjoPane pane = AnjoPane.build(components, "WHITELIST", 0,
-                new ImageIcon("src/main/resources/minecraft.png").getImage().getScaledInstance(128, 128, Image.SCALE_SMOOTH));
+        AnjoPane pane = AnjoPane.build(components, "WHITELIST", -1,
+                resourceLib.getImageFromResourceAsStream("minecraft.png").getScaledInstance(128, 128, Image.SCALE_SMOOTH));
         String minecraftUsername = pane.getTextFieldText(0);
         System.out.println(minecraftUsername);
         String discordUsername = pane.getTextFieldText(1);

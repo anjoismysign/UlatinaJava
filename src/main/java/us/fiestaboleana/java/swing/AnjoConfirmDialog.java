@@ -20,9 +20,11 @@ public class AnjoConfirmDialog {
         JPanel foot;
         JDialog dialog = new JDialog();
         dialog.setTitle(title);
-        SwingLib.center(dialog);
-        if (image != null)
+        if (image != null) {
+            if (Taskbar.isTaskbarSupported())
+                Taskbar.getTaskbar().setIconImage(image);
             dialog.setIconImage(image.getScaledInstance(32, 32, Image.SCALE_SMOOTH));
+        }
         dialog.add(master);
         switch (optionType) {
             case 0 -> {
@@ -43,6 +45,7 @@ public class AnjoConfirmDialog {
                     dialog.dispose();
                 });
                 dialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
+                SwingLib.center(dialog);
                 dialog.setVisible(true);
                 dialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             }
@@ -69,6 +72,7 @@ public class AnjoConfirmDialog {
                     dialog.dispose();
                 });
                 dialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
+                SwingLib.center(dialog);
                 dialog.setVisible(true);
                 dialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             }
@@ -89,6 +93,7 @@ public class AnjoConfirmDialog {
                     dialog.dispose();
                 });
                 dialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
+                SwingLib.center(dialog);
                 dialog.setVisible(true);
                 dialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             }
@@ -103,6 +108,7 @@ public class AnjoConfirmDialog {
                     dialog.dispose();
                 });
                 dialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
+                SwingLib.center(dialog);
                 dialog.setVisible(true);
                 dialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             }
