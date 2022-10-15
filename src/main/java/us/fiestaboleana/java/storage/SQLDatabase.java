@@ -74,14 +74,12 @@ public abstract class SQLDatabase extends Logger {
     }
 
     /**
-     * Regresa el PreperedStatement de "SELECT * FROM table WHERE keyType='key'".
-     * <p>
-     * Una vez que se haya terminado de usar, se debe cerrar con {@link PreparedStatement#close()}
+     * Selecciona todos los datos de una tabla y los regresa en un PreparedStatement
      *
-     * @param keyType El tipo de clave
-     * @param key     La clave
+     * @param keyType El tipo de clave de la tabla
+     * @param key     La clave de la tabla
      * @param table   La tabla
-     * @return null si no se encuentra. PreparedStatement de lo contrario
+     * @return El PreparedStatement
      */
     @Nullable
     public PreparedStatement selectAllFromData(String keyType, String key, String table) {
@@ -93,6 +91,63 @@ public abstract class SQLDatabase extends Logger {
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    /**
+     * Actualiza un set de datos en una tabla
+     *
+     * @param keyType El tipo de clave de la tabla
+     * @param table   La tabla
+     * @param values  Los valores a actualizar
+     * @return El PreparedStatement
+     */
+    public PreparedStatement updateDataSet(String keyType, String table, String values) {
+        Connection connection = null;
+        try {
+            connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE " + table + " SET " + values + " WHERE " + keyType + "=?");
+            return preparedStatement;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * Crea una nueva tabla
+     *
+     * @param table      La tabla
+     * @param columns    Las columnas
+     * @param primaryKey La clave primaria
+     */
+    public void createTable(String table, String columns, String primaryKey) {
+        Connection connection = null;
+        try {
+            connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS " + table + " (" + columns + ",PRIMARY KEY(" + primaryKey + "))");
+            try {
+                preparedStatement.executeUpdate();
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } catch (SQLException e) {
+                if (preparedStatement != null)
+                    try {
+                        preparedStatement.close();
+                    } catch (SQLException e1) {
+                        e1.printStackTrace();
+                    }
+                e.printStackTrace();
+            } finally {
+                if (preparedStatement != null)
+                    try {
+                        preparedStatement.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         } finally {
             if (connection != null)
                 try {
@@ -104,24 +159,31 @@ public abstract class SQLDatabase extends Logger {
     }
 
     /**
-     * Regresa el PreperedStatement de "UPDATE table SET values WHERE keyType='key'".
-     * <p>
-     * Una vez que se haya terminado de usar, se debe cerrar con {@link PreparedStatement#close()}
+     * Confirma si una tabla existe
      *
-     * @param keyType El tipo de clave
      * @param table   La tabla
-     * @param values  Los valores
-     * @return null si no se encuentra. PreparedStatement de lo contrario
+     * @param keyType El tipo de clave de la tabla
+     * @param key     La clave de la tabla
+     * @return "true" Si la tabla existe, "false" si no existe
      */
-    public PreparedStatement updateDataSet(String keyType, String table, String values) {
+    public boolean exists(String table, String keyType, String key) {
         Connection connection = null;
         try {
             connection = getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE " + table + " SET " + values + " WHERE " + keyType + "=?");
-            return preparedStatement;
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM " + table + " WHERE " + keyType + "='" + key + "'");
+            try {
+                return preparedStatement.executeQuery().next();
+            } catch (Throwable throwable) {
+                if (preparedStatement != null)
+                    try {
+                        preparedStatement.close();
+                    } catch (Throwable throwable1) {
+                        throwable.addSuppressed(throwable1);
+                    }
+                throw throwable;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
         } finally {
             if (connection != null)
                 try {
@@ -130,5 +192,6 @@ public abstract class SQLDatabase extends Logger {
                     e.printStackTrace();
                 }
         }
+        return false;
     }
 }
