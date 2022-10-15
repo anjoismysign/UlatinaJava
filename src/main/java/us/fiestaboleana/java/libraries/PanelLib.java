@@ -2,8 +2,14 @@ package us.fiestaboleana.java.libraries;
 
 import javax.swing.*;
 
+/**
+ * @author anjoismysign
+ */
 public class PanelLib {
-    public static void esEs(){
+    /**
+     * Translates UI buttons to Spanish
+     */
+    public static void esEs() {
         UIManager.put("OptionPane.cancelButtonText", "Anular");
         UIManager.put("OptionPane.noButtonText", "No");
         UIManager.put("OptionPane.okButtonText", "Acepto");
@@ -17,12 +23,13 @@ public class PanelLib {
      * se recomienda PanelLib#esEs al inicio del
      * método main
      * La diferencia de este método es que permite poner un título al JOptionPane
-     * @param title Título del JOptionPane
+     *
+     * @param title   Título del JOptionPane
      * @param message Mensaje que se muestra mientras se pide
      *                el boolean
      * @return el boolean seleccionado
      */
-    public static boolean requestBoolean(String title, String message){
+    public static boolean requestBoolean(String title, String message) {
         JOptionPane.setRootFrame(null);
         int x = JOptionPane.showConfirmDialog(null, message, title,
                 0, -1);
@@ -37,11 +44,12 @@ public class PanelLib {
      * En caso del mensaje ser escrito en español,
      * se recomienda PanelLib#esEs al inicio del
      * método main
+     *
      * @param message Mensaje que se muestra mientras se pide
      *                el boolean
      * @return el boolean seleccionado
      */
-    public static boolean requestBoolean(String message){
+    public static boolean requestBoolean(String message) {
         return requestBoolean("", message);
     }
 
@@ -49,15 +57,16 @@ public class PanelLib {
      * Pide un boolean mediante un JOptionPane
      * De no ingresarse "si" o "no", se hace recursión
      * La diferencia de este método es que permite poner un título al JOptionPane
-     * @param titulo Título del JOptionPane
+     *
+     * @param titulo  Título del JOptionPane
      * @param mensaje Mensaje mostrado antes de "Ingrese 'si' o 'no'"
      * @return true en caso de "si", false en caso de "no"
      */
-    public static boolean confirmar(String titulo, String mensaje){
-        String input = PanelLib.requestString(mensaje+" \nIngrese 'si' o 'no'");
+    public static boolean confirmar(String titulo, String mensaje) {
+        String input = PanelLib.requestString(mensaje + " \nIngrese 'si' o 'no'");
         String minusculas = input.toLowerCase();
         if (!minusculas.equals("si") && !minusculas.equals("no")) {
-            PanelLib.showMessage(titulo,"'"+input+"' no es ni 'si' ni 'no'");
+            PanelLib.showMessage(titulo, "'" + input + "' no es ni 'si' ni 'no'");
             return confirmar(titulo, mensaje);
         }
         if (minusculas.equals("si"))
@@ -69,10 +78,11 @@ public class PanelLib {
     /**
      * Pide un boolean mediante un JOptionPane
      * De no ingresarse "si" o "no", se hace recursión
+     *
      * @param mensaje Mensaje mostrado antes de "Ingrese 'si' o 'no'"
      * @return true en caso de "si", false en caso de "no"
      */
-    public static boolean confirmar(String mensaje){
+    public static boolean confirmar(String mensaje) {
         return confirmar("", mensaje);
     }
 
@@ -80,15 +90,16 @@ public class PanelLib {
      * Pide un boolean mediante un JOptionPane
      * De no ingresarse "yes" o "no", se hace recursión
      * La diferencia de este método es que permite poner un título al JOptionPane
-     * @param title Título del JOptionPane
+     *
+     * @param title   Título del JOptionPane
      * @param message Mensaje mostrado antes de "Type 'yes' or 'no'"
      * @return true en caso de "yes", false en caso de "no"
      */
-    public static boolean confirm(String title, String message){
-        String input = PanelLib.requestString(message+" \nType 'yes' or 'no'");
+    public static boolean confirm(String title, String message) {
+        String input = PanelLib.requestString(message + " \nType 'yes' or 'no'");
         String lowercased = input.toLowerCase();
         if (!lowercased.equals("yes") && !lowercased.equals("no")) {
-            PanelLib.showMessage(title,"'"+input+"' is neither 'yes' or 'no'");
+            PanelLib.showMessage(title, "'" + input + "' is neither 'yes' or 'no'");
             return confirm(title, message);
         }
         if (lowercased.equals("yes"))
@@ -100,10 +111,11 @@ public class PanelLib {
     /**
      * Pide un boolean mediante un JOptionPane
      * De no ingresarse "yes" o "no", se hace recursión
+     *
      * @param message Mensaje mostrado antes de "Type 'yes' or 'no'"
      * @return true en caso de "yes", false en caso de "no"
      */
-    public static boolean confirm(String message){
+    public static boolean confirm(String message) {
         return confirm("", message);
     }
 
@@ -111,7 +123,8 @@ public class PanelLib {
      * Pide un entero (int/integer) mediante un JOptionPane
      * Si no se introduce un entero, se hara recursión hasta conseguir el entero
      * La diferencia de este método es que permite poner un título al JOptionPane
-     * @param title Título del JOptionPane
+     *
+     * @param title   Título del JOptionPane
      * @param message Mensaje que se muestra mientras se pide el entero
      * @return el entero
      */
@@ -132,6 +145,7 @@ public class PanelLib {
     /**
      * Pide un entero (int/integer) mediante un JOptionPane
      * Si no se introduce un entero, se hara recursión hasta conseguir el entero
+     *
      * @param message Mensaje que se muestra mientras se pide el entero
      * @return el entero
      */
@@ -143,7 +157,8 @@ public class PanelLib {
      * Pide un numero decimal (double) mediante un JOptionPane
      * Si no se introduce un numero decimal, se hara recursión hasta conseguir el numero decimal
      * La diferencia de este método es que permite poner un título al JOptionPane
-     * @param title Título del JOptionPane
+     *
+     * @param title   Título del JOptionPane
      * @param message Mensaje que se muestra mientras se pide el numero decimal
      * @return el numero decimal
      */
@@ -163,6 +178,7 @@ public class PanelLib {
     /**
      * Pide un numero decimal (double) mediante un JOptionPane
      * Si no se introduce un numero decimal, se hara recursión hasta conseguir el numero decimal
+     *
      * @param message Mensaje que se muestra mientras se pide el numero decimal
      * @return el numero decimal
      */
@@ -173,6 +189,7 @@ public class PanelLib {
     /**
      * Pide una cadena de texto (String) mediante un JOptionPane
      * Si la cadena de texto está vacía o es null, se hara recursión hasta conseguir una cadena de texto
+     *
      * @param message Mensaje que se muestra mientras se pide la cadena de texto
      * @return la cadena de texto
      */
@@ -185,7 +202,8 @@ public class PanelLib {
      * Pide una cadena de texto (String) mediante un JOptionPane
      * La diferencia es que este método permite poner un título al JOptionPane
      * Si la cadena de texto está vacía o es null, se hara recursión hasta conseguir una cadena de texto
-     * @param title Título del JOptionPane
+     *
+     * @param title   Título del JOptionPane
      * @param message Mensaje que se muestra mientras se pide la cadena de texto
      * @return la cadena de texto
      */
@@ -200,6 +218,7 @@ public class PanelLib {
 
     /**
      * Muestra un mensaje mediante un JOptionPane
+     *
      * @param message Mensaje que se muestra
      */
     public static void showMessage(String message) {
@@ -209,7 +228,8 @@ public class PanelLib {
     /**
      * Muestra un mensaje mediante un JOptionPane
      * La diferencia de este método es que permite poner un título al JOptionPane
-     * @param title Título del JOptionPane
+     *
+     * @param title   Título del JOptionPane
      * @param message Mensaje que se muestra
      */
     public static void showMessage(String title, String message) {

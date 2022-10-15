@@ -7,8 +7,17 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * @author anjoismysign
+ */
 public class ResourceLib {
 
+    /**
+     * Gets a resource from the resources folder as InputStream
+     *
+     * @param fileName The name of the file
+     * @return The InputStream of the file
+     */
     @Nullable
     public InputStream getFileFromResourceAsStream(String fileName) {
 
@@ -22,6 +31,12 @@ public class ResourceLib {
 
     }
 
+    /**
+     * Gets an image from the resources folder
+     *
+     * @param fileName The name of the file
+     * @return The BufferedImage of the file
+     */
     @Nullable
     public BufferedImage getImageFromResourceAsStream(String fileName) {
 

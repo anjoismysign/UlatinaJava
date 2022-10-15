@@ -80,6 +80,7 @@ public abstract class SQLDatabase extends Logger {
      *
      * @param keyType El tipo de clave
      * @param key     La clave
+     * @param table   La tabla
      * @return null si no se encuentra. PreparedStatement de lo contrario
      */
     @Nullable

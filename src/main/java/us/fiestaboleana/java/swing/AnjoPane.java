@@ -7,14 +7,25 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Collection;
 
+/**
+ * @author anjoismysign
+ */
 public class AnjoPane {
     private JPanel panel;
     private int result;
 
+    /**
+     * default constructor
+     *
+     * @param panel the panel
+     */
     public AnjoPane(JPanel panel) {
         this.panel = panel;
     }
 
+    /**
+     * empty constructor. you need to call {@link #setPanel(JPanel)} to set the panel
+     */
     public AnjoPane() {
     }
 
@@ -26,6 +37,8 @@ public class AnjoPane {
      *                   1 = YES_NO_CANCEL_OPTION.
      *                   2 = OK_CANCEL_OPTION.
      *                   -1 = DEFAULT_OPTION.
+     * @param image      Imagen que se usará como ícono en el programa
+     * @return El panel
      * @see AnjoComponent
      */
     public static AnjoPane build(Collection<AnjoComponent> components,
@@ -51,19 +64,45 @@ public class AnjoPane {
         return pane;
     }
 
+    /**
+     * construye el panel pero sin imagen
+     *
+     * @param components Los componentes que conforman el panel
+     * @param title      Título del panel
+     * @param optionType Tipo de botones que se mostrarán
+     *                   0 = YES_NO_OPTION.
+     *                   1 = YES_NO_CANCEL_OPTION.
+     *                   2 = OK_CANCEL_OPTION.
+     *                   -1 = DEFAULT_OPTION.
+     * @return El panel
+     * @see AnjoComponent
+     */
     public static AnjoPane build(Collection<AnjoComponent> components,
                                  String title, int optionType) {
         return build(components, title, optionType, null);
     }
 
+    /**
+     * sets the panel
+     *
+     * @param panel the panel
+     */
     public void setPanel(JPanel panel) {
         this.panel = panel;
     }
 
+    /**
+     * @return the panel
+     */
     public JPanel getPanel() {
         return panel;
     }
 
+    /**
+     * sets the result
+     *
+     * @param result the result
+     */
     public void setResult(int result) {
         this.result = result;
     }

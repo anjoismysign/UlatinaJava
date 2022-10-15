@@ -4,7 +4,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-
+/**
+ * @author anjoismysign
+ */
 public class ScannerLib {
 
     /**
