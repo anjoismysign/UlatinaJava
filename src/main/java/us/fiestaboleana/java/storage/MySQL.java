@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public final class MySQL extends SQLDatabase {
-    public MySQL(String hostName, int port, String database, String user, String password) {
+    protected MySQL(String hostName, int port, String database, String user, String password) {
         super(hostName, port, database, user, password);
         dataSource.setJdbcUrl("jdbc:mysql://" + this.hostName + ':' + this.port + '/' + this.database);
     }

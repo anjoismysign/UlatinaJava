@@ -4,7 +4,7 @@ import java.io.File;
 import java.sql.Connection;
 
 public final class SQLite extends SQLDatabase {
-    SQLite(String name, File path) {
+    protected SQLite(String name, File path) {
         super(null, 0, name, null, null);
         File file = new File(path, database.endsWith(".db") ? database : database + ".db");
         try {
