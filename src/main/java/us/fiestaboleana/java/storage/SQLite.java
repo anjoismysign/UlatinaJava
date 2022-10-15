@@ -27,7 +27,8 @@ public final class SQLite extends SQLDatabase {
         try {
             connection = this.dataSource.getConnection();
         } catch (Exception e) {
-            error("Failed to connect to 'SQLite' using database:" + database);
+            e.printStackTrace();
+            error("Failed to connect to 'SQLite' using database: " + database);
         }
         return connection;
     }
