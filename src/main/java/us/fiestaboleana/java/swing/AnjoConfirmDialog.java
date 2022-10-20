@@ -52,6 +52,7 @@ public class AnjoConfirmDialog {
         dialog.setTitle(title);
         if (image != null) {
             if (Taskbar.isTaskbarSupported())
+                //windows
                 if (Taskbar.getTaskbar().isSupported(Taskbar.Feature.ICON_IMAGE))
                     Taskbar.getTaskbar().setIconImage(image);
             dialog.setIconImage(image.getScaledInstance(32, 32, Image.SCALE_SMOOTH));
