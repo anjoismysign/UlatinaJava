@@ -73,7 +73,7 @@ public class AnjoPane {
      *                   0 = YES_NO_OPTION.
      *                   1 = YES_NO_CANCEL_OPTION.
      *                   2 = OK_CANCEL_OPTION.
-     *                   -1 = DEFAULT_OPTION.
+     *                   -1 = DEFAULT_OPTION, que es lo mismo que solamente YES/OK/CONTINUE
      * @return El panel
      * @see AnjoComponent
      */
