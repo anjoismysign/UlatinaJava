@@ -14,11 +14,7 @@ public class AlgorithmLib {
      * @param message  Mensaje que se muestra antes de agregar otro elemento
      */
     public static void dynamicRun(Runnable runnable, String title, String message) {
-        boolean next = true;
-        while (next) {
-            runnable.run();
-            next = PanelLib.requestBoolean(title, message);
-        }
+        me.anjoismysign.anjo.libraries.AlgorithmLib.dynamicRun(runnable, title, message);
     }
 
     /**

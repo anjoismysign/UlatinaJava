@@ -13,6 +13,6 @@ public class UlatinaJava {
      */
     public static void main(String[] args) {
         PanelLib.esEs();
-        Sample.constuir();
+        Sample.build();
     }
 }

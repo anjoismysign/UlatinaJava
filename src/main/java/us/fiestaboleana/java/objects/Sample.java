@@ -1,7 +1,9 @@
 package us.fiestaboleana.java.objects;
 
-import us.fiestaboleana.java.swing.AnjoComponent;
-import us.fiestaboleana.java.swing.AnjoPane;
+import me.anjoismysign.anjo.entities.IntegerResult;
+import me.anjoismysign.anjo.libraries.PanelLib;
+import me.anjoismysign.anjo.swing.AnjoComponent;
+import me.anjoismysign.anjo.swing.AnjoPane;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -27,36 +29,26 @@ public class Sample {
      *
      * @return the Sample object
      */
-    public static Sample constuir() {
-        AnjoComponent componente1 = new AnjoComponent("Nombre de usuario de Minecraft:", new JTextField());
-        AnjoComponent componente2 = new AnjoComponent("Nombre de usuario de Discord:", new JTextField());
-        AnjoComponent componente3 = new AnjoComponent("Altura:", new JTextField());
+    public static Sample build() {
+        AnjoComponent component1 = new AnjoComponent("Minecraft username:", new JTextField());
+        AnjoComponent component2 = new AnjoComponent("Discord username:", new JTextField());
+        AnjoComponent component3 = new AnjoComponent("Age:", new JTextField());
         List<AnjoComponent> componentes = new ArrayList<>();
-        componentes.add(componente1);
-        componentes.add(componente2);
-        componentes.add(componente3);
+        componentes.add(component1);
+        componentes.add(component2);
+        componentes.add(component3);
         AnjoPane anjoPane = AnjoPane.build(componentes, "Programa de prueba", 2, null);
         String minecraftUsername = anjoPane.getTextFieldText(0);
         String discordUsername = anjoPane.getTextFieldText(1);
-        DoubleResult result = anjoPane.getDouble(2);
+        IntegerResult result = anjoPane.getInteger(2);
         if (!result.isValid()) {
-            constuir();
+            build();
             return null;
         }
-        double height = result.value();
-        System.out.println(minecraftUsername + ", " + discordUsername + ", " + height);
-
-////
-////        ResourceLib resourceLib = new ResourceLib();
-////        List<AnjoComponent> components = new ArrayList<>();
-////        components.add(new AnjoComponent("Nombre de usuario (Minecraft)", new JTextField(20)));
-////        components.add(new AnjoComponent("Nombre de usuario (Discord)", new JTextField(20)));
-////        AnjoPane pane = AnjoPane.build(components, "WHITELIST", -1,
-////                resourceLib.getImageFromResourceAsStream("minecraft.png").getScaledInstance(128, 128, Image.SCALE_SMOOTH));
-//        String minecraftUsername = pane.getTextFieldText(0);
-//        System.out.println(minecraftUsername);
-//        String discordUsername = pane.getTextFieldText(1);
-//        System.out.printf(discordUsername);
+        int age = result.value();
+        if (age > 13) {
+            PanelLib.showMessage("WARNING", "Remember to keep it PG-13!");
+        }
         return new Sample(minecraftUsername, discordUsername);
     }
 

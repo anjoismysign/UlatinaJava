@@ -1,6 +1,5 @@
 package us.fiestaboleana.java.storage;
 
-import com.mongodb.lang.Nullable;
 import com.zaxxer.hikari.HikariDataSource;
 import us.fiestaboleana.java.objects.Logger;
 
@@ -81,7 +80,6 @@ public abstract class SQLDatabase extends Logger {
      * @param table   La tabla
      * @return El PreparedStatement
      */
-    @Nullable
     public PreparedStatement selectAllFromData(String keyType, String key, String table) {
         Connection connection = null;
         try {

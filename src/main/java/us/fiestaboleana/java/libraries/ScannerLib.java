@@ -20,16 +20,9 @@ public class ScannerLib {
      * @return entero consultado
      */
     public static int scanInt(List<String> toPrint) {
-        toPrint.forEach(System.out::println);
-        Scanner scanner = new Scanner(System.in);
-        if (scanner.hasNextInt()) {
-            return scanner.nextInt();
-        } else {
-            System.out.println("'" + scanner.next() + "' no es un entero");
-            System.out.println("Integer (entero): '-2147483648' hasta '2147483647'");
-            System.out.println("Ejemplo de entero: 17");
-            return scanInt(toPrint);
-        }
+        return me.anjoismysign.anjo.libraries.ScannerLib.scanInt(toPrint, "'%input%' no es un entero. \n" +
+                "Integer (entero): '-2147483648' hasta '2147483647' \n" +
+                "Ejemplo de entero: 17");
     }
 
     /**
@@ -43,15 +36,8 @@ public class ScannerLib {
      * @return double consultado
      */
     public static double scanDouble(List<String> toPrint) {
-        toPrint.forEach(System.out::println);
-        Scanner scanner = new Scanner(System.in);
-        if (scanner.hasNextDouble()) {
-            return scanner.nextDouble();
-        } else {
-            System.out.println("'" + scanner.next() + "' no es un numero decimal");
-            System.out.println("Ejemplo de double (numero decimal): '3.14'");
-            return scanDouble(toPrint);
-        }
+        return me.anjoismysign.anjo.libraries.ScannerLib.scanDouble(toPrint, "'%input%' no es un número decimal. \n" +
+                "Ejemplo de double (numero decimal): '3.14'");
     }
 
     /**

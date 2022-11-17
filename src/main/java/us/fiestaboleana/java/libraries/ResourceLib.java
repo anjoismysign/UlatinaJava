@@ -1,7 +1,5 @@
 package us.fiestaboleana.java.libraries;
 
-import com.mongodb.lang.Nullable;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -16,9 +14,8 @@ public class ResourceLib {
      * Gets a resource from the resources folder as InputStream
      *
      * @param fileName The name of the file
-     * @return The InputStream of the file
+     * @return The InputStream of the file. Null if the file doesn't exist
      */
-    @Nullable
     public InputStream getFileFromResourceAsStream(String fileName) {
 
         ClassLoader classLoader = getClass().getClassLoader();
@@ -28,16 +25,14 @@ public class ResourceLib {
             System.out.println("File not found");
         }
         return inputStream;
-
     }
 
     /**
      * Gets an image from the resources folder
      *
      * @param fileName The name of the file
-     * @return The BufferedImage of the file
+     * @return The BufferedImage of the file. Null if the file doesn't exist
      */
-    @Nullable
     public BufferedImage getImageFromResourceAsStream(String fileName) {
 
         BufferedImage img = null;

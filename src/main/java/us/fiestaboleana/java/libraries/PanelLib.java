@@ -30,12 +30,7 @@ public class PanelLib {
      * @return el boolean seleccionado
      */
     public static boolean requestBoolean(String title, String message) {
-        JOptionPane.setRootFrame(null);
-        int x = JOptionPane.showConfirmDialog(null, message, title,
-                0, -1);
-        if (x == JOptionPane.CLOSED_OPTION)
-            return requestBoolean(title, message);
-        return x == 0 ? true : false;
+        return me.anjoismysign.anjo.libraries.PanelLib.requestBoolean(title, message);
     }
 
     /**
@@ -63,16 +58,7 @@ public class PanelLib {
      * @return true en caso de "si", false en caso de "no"
      */
     public static boolean confirmar(String titulo, String mensaje) {
-        String input = PanelLib.requestString(mensaje + " \nIngrese 'si' o 'no'");
-        String minusculas = input.toLowerCase();
-        if (!minusculas.equals("si") && !minusculas.equals("no")) {
-            PanelLib.showMessage(titulo, "'" + input + "' no es ni 'si' ni 'no'");
-            return confirmar(titulo, mensaje);
-        }
-        if (minusculas.equals("si"))
-            return true;
-        else
-            return false;
+        return me.anjoismysign.anjo.libraries.PanelLib.confirmar(titulo, mensaje, "'%input%' no es ni 'si' ni 'no'");
     }
 
     /**
@@ -96,16 +82,7 @@ public class PanelLib {
      * @return true en caso de "yes", false en caso de "no"
      */
     public static boolean confirm(String title, String message) {
-        String input = PanelLib.requestString(message + " \nType 'yes' or 'no'");
-        String lowercased = input.toLowerCase();
-        if (!lowercased.equals("yes") && !lowercased.equals("no")) {
-            PanelLib.showMessage(title, "'" + input + "' is neither 'yes' or 'no'");
-            return confirm(title, message);
-        }
-        if (lowercased.equals("yes"))
-            return true;
-        else
-            return false;
+        return me.anjoismysign.anjo.libraries.PanelLib.confirm(title, message, "'%input%' is neither 'yes' or 'no'");
     }
 
     /**
@@ -129,17 +106,9 @@ public class PanelLib {
      * @return el entero
      */
     public static int requestInteger(String title, String message) {
-        String input = requestString(title, message);
-        int x = 0;
-        try {
-            x = Integer.parseInt(input);
-            return x;
-        } catch (NumberFormatException e) {
-            showMessage("ERROR", "'" + input + "' no es un entero\n" +
-                    "Integer (entero): '-2147483648' hasta '2147483647'\n" +
-                    "Ejemplo de entero: 17");
-            return requestInteger(title, message);
-        }
+        return me.anjoismysign.anjo.libraries.PanelLib.requestInteger(title, message, "'%input%' no es un entero\n" +
+                "Integer (entero): '-2147483648' hasta '2147483647'\n" +
+                "Ejemplo de entero: 17");
     }
 
     /**
@@ -163,16 +132,9 @@ public class PanelLib {
      * @return el numero decimal
      */
     public static double requestDouble(String title, String message) {
-        String input = requestString(title, message);
-        double x = 0;
-        try {
-            x = Double.parseDouble(input);
-            return x;
-        } catch (NumberFormatException e) {
-            showMessage("ERROR", "'" + input + "' no es un numero decimal\n" +
-                    "Ejemplo de double (numero decimal): '3.14'");
-            return requestDouble(title, message);
-        }
+        return me.anjoismysign.anjo.libraries.PanelLib.requestDouble(title, message, "'%input%' no es un número decimal\n" +
+                "Double (numero decimal): '-1.7976931348623157E308' hasta '1.7976931348623157E308'\n" +
+                "Ejemplo de numero decimal: 17.5");
     }
 
     /**
@@ -194,8 +156,7 @@ public class PanelLib {
      * @return la cadena de texto
      */
     public static String requestString(String message) {
-        String input = requestString("", message);
-        return input;
+        return requestString("", message);
     }
 
     /**
@@ -208,12 +169,7 @@ public class PanelLib {
      * @return la cadena de texto
      */
     public static String requestString(String title, String message) {
-        String input = JOptionPane.showInputDialog(null, message, title, -1);
-        if (input == null || input.length() == 0) {
-            showMessage("ERROR", "Lo introducido está vacío");
-            return requestString(title, message);
-        }
-        return input;
+        return me.anjoismysign.anjo.libraries.PanelLib.requestString(title, message, "Lo introducido no es válido");
     }
 
     /**
