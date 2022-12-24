@@ -8,9 +8,9 @@ import java.awt.*;
 public class SwingLib {
 
     /**
-     * Centers a window on the screen
+     * Centra un componente en la pantalla
      *
-     * @param window the window instance
+     * @param window componente a centrar
      */
     public static void center(Window window) {
         window.setLocationRelativeTo(null);

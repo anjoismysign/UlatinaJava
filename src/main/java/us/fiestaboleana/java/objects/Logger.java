@@ -5,18 +5,18 @@ package us.fiestaboleana.java.objects;
  */
 public class Logger {
     /**
-     * prints/logs a message
+     * Imprime un mensaje en la consola
      *
-     * @param message the message to print/log
+     * @param message mensaje a imprimir
      */
     public void log(String message) {
         System.out.println(message);
     }
 
     /**
-     * prints/logs a message to debug
+     * Imprime un mensaje en la consola con intención de ser visible para DEBUG
      *
-     * @param message the message to print/log
+     * @param message mensaje a imprimir
      */
     public void debug(String message) {
         log("DEBUG: " + message);
@@ -25,9 +25,9 @@ public class Logger {
     }
 
     /**
-     * prints/logs a message to error
+     * Imprime un mensaje en la consola con intención de ser visible por ERROR
      *
-     * @param message the message to print/log
+     * @param message mensaje a imprimir
      */
     public void error(String message) {
         log("ERROR: " + message);
@@ -36,9 +36,9 @@ public class Logger {
     }
 
     /**
-     * prints/logs a message to error (just one time)
+     * Imprime un mensaje en la consola con intención de ser visible por ERROR (solamente una vez)
      *
-     * @param message the message to print/log
+     * @param message mensaje a imprimir
      */
     public void singleError(String message) {
         log("ERROR: " + message);

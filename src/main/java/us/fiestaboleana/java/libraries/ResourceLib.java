@@ -11,10 +11,10 @@ import java.io.InputStream;
 public class ResourceLib {
 
     /**
-     * Gets a resource from the resources folder as InputStream
+     * Obtiene un recurso de la carpeta resources
      *
-     * @param fileName The name of the file
-     * @return The InputStream of the file. Null if the file doesn't exist
+     * @param fileName nombre del archivo
+     * @return el recurso
      */
     public InputStream getFileFromResourceAsStream(String fileName) {
 
@@ -28,10 +28,10 @@ public class ResourceLib {
     }
 
     /**
-     * Gets an image from the resources folder
+     * Obtiene una imagen de la carpeta resources
      *
-     * @param fileName The name of the file
-     * @return The BufferedImage of the file. Null if the file doesn't exist
+     * @param fileName nombre del archivo
+     * @return la imagen
      */
     public BufferedImage getImageFromResourceAsStream(String fileName) {
 

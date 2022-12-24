@@ -1,7 +1,7 @@
 package us.fiestaboleana.java;
 
 import us.fiestaboleana.java.libraries.PanelLib;
-import us.fiestaboleana.java.objects.Sample;
+import us.fiestaboleana.java.objects.Ejemplo;
 
 /**
  * @author anjoismysign
@@ -9,10 +9,10 @@ import us.fiestaboleana.java.objects.Sample;
 public class UlatinaJava {
 
     /**
-     * @param args the command line arguments
+     * @param args argumentos de la línea de comandos
      */
     public static void main(String[] args) {
         PanelLib.esEs();
-        Sample.build();
+        Ejemplo.construir();
     }
 }
